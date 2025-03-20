@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { DustEffect } from "./dust-effect";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
