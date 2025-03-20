@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "PASIFIXC",
-  description: "PASIFIXC community platform",
+  description: "PASIFIXC",
     generator: 'v0.dev'
 }
 
