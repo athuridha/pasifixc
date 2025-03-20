@@ -7,9 +7,38 @@ const members = [
     id: 1,
     name: "Nath",
     username: "@comfortchainn",
-    avatar: "/placeholder.svg?height=100&width=100",
+    avatar: "/images/pasifixc.webp?height=100&width=100",
     bio: "mnjir gweh",
   },
+  {
+    id: 2,
+    name: "levia",
+    username: "@7levia",
+    avatar: "/images/pasifixc.webp?height=100&width=100",
+    bio: "emmuach❤️",
+  },
+  {
+    id: 3,
+    name: "blur",
+    username: "@directional.blur",
+    avatar: "/images/pasifixc.webp?height=100&width=100",
+    bio: "",
+  },
+  {
+    id: 4,
+    name: "rafwpu 💔",
+    username: "@rafwpu",
+    avatar: "/images/pasifixc.webp?height=100&width=100",
+    bio: "",
+  },
+  {
+    id: 5,
+    name: "frecias",
+    username: "@rvnggakbar",
+    avatar: "/images/pasifixc.webp?height=100&width=100",
+    bio: "",
+  },
+
 ]
 
 export default function MembersPage() {
