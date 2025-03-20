@@ -7,8 +7,8 @@ const socialMediaProfiles = [
   {
     id: 1,
     platform: "Discord",
-    username: "PASIFIXC Community",
-    url: "https://discord.gg/pasifixc",
+    username: "PASIFIXC Discord Server",
+    url: "https://discord.gg/wcbaUwHEFE",
     icon: Discord,
     color: "from-red-500 to-red-700",
   },
