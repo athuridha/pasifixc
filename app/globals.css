@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 0 72.2% 50.6%;
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 72.2% 50.6%;
+
+  --radius: 0.5rem;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Horror theme enhancements */
+:root {
+  --background: 0 0% 2%;
+  --foreground: 0 0% 95%;
+
+  --card: 0 0% 3%;
+  --card-foreground: 0 0% 95%;
+
+  --popover: 0 0% 3%;
+  --popover-foreground: 0 0% 95%;
+
+  --primary: 0 80% 45%;
+  --primary-foreground: 0 0% 95%;
+
+  --secondary: 0 0% 10%;
+  --secondary-foreground: 0 0% 95%;
+
+  --muted: 0 0% 10%;
+  --muted-foreground: 0 0% 60%;
+
+  --accent: 0 0% 10%;
+  --accent-foreground: 0 0% 95%;
+
+  --destructive: 0 70% 30%;
+  --destructive-foreground: 0 0% 95%;
+
+  --border: 0 0% 12%;
+  --input: 0 0% 12%;
+  --ring: 0 80% 45%;
+}
+
+/* Horror vignette effect for all pages */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.8) 100%);
+  pointer-events: none;
+  z-index: 30;
+}
+
+/* Subtle blood drip animation */
+@keyframes blood-drip {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Add horror theme animations */
+@layer utilities {
+  .animate-pulse {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.2;
+    }
+  }
+}
+
