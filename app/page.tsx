@@ -7,7 +7,7 @@ export default function Home() {
       <RedBeam />
 
       {/* Horror elements */}
-      <div className="absolute inset-0 bg-[url('/placeholder.svg?height=100&width=100')] bg-repeat opacity-5 mix-blend-overlay"></div>
+      <div className="absolute inset-0 bg bg-repeat opacity-5 mix-blend-overlay"></div>
 
       <div className="z-20 flex flex-col md:flex-row items-center justify-center gap-8 p-8 max-w-4xl mx-auto backdrop-blur-sm bg-black/20 rounded-lg border border-red-900/20">
         <div className="relative w-48 h-48 md:w-64 md:h-64 group">
@@ -17,6 +17,7 @@ export default function Home() {
             alt="PASIFIXC Logo"
             width={256}
             height={256}
+            priority
             className="rounded-md relative z-10 filter contrast-125 group-hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-red-900/30 to-transparent rounded-md z-20"></div>

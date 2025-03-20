@@ -20,7 +20,7 @@ export default function SocialsPage() {
       <RedBeam />
 
       {/* Horror elements */}
-      <div className="absolute inset-0 bg-[url('/placeholder.svg?height=100&width=100')] bg-repeat opacity-5 mix-blend-overlay"></div>
+      <div className="absolute inset-0 bg-repeat opacity-5 mix-blend-overlay"></div>
 
       <div className="container mx-auto px-4 max-w-4xl z-10 relative">
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
