@@ -5,10 +5,10 @@ import { RedBeam } from "@/components/red-beam"
 const members = [
   {
     id: 1,
-    name: "Nath",
+    name: "nath",
     username: "@comfortchainn",
     avatar: "/images/pasifixc.webp?height=100&width=100",
-    bio: "mnjir gweh",
+    bio: "gwe njir",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const members = [
     name: "blur",
     username: "@directional.blur",
     avatar: "/images/pasifixc.webp?height=100&width=100",
-    bio: "",
+    bio: "ore wa strika da!!",
   },
   {
     id: 4,
@@ -33,11 +33,26 @@ const members = [
   },
   {
     id: 5,
-    name: "frecias",
+    name: "freacias",
     username: "@rvnggakbar",
     avatar: "/images/pasifixc.webp?height=100&width=100",
     bio: "",
   },
+  {
+    id: 6,
+    name: "carlos",
+    username: "@yarloss",
+    avatar: "/images/pasifixc.webp?height=100&width=100",
+    bio: "",
+  },
+  {
+    id: 7,
+    name: "claw",
+    username: "@clawsie.",
+    avatar: "/images/pasifixc.webp?height=100&width=100",
+    bio: "",
+  },
+
 
 ]
 

@@ -1,6 +1,6 @@
 import { RedBeam } from "@/components/red-beam"
 import { SocialMediaCard } from "@/components/social-media-card"
-import { Facebook, Instagram, Twitter, Youtube, Twitch, DiscIcon as Discord } from "lucide-react"
+import { Facebook, Instagram, Twitter, Youtube, Twitch, LinkIcon as Discord } from "lucide-react"
 
 // PASIFIXC social media profiles
 const socialMediaProfiles = [

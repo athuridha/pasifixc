@@ -11,7 +11,6 @@ export default function Navbar() {
 
   return (
     <nav className="flex flex-col md:flex-row justify-between items-center p-4 border-b border-red-900/30 bg-black/50 backdrop-blur-sm z-50 relative">
-      <DustEffect />
       <div className="flex w-full md:w-auto justify-between items-center md:order-2">
         <Link href="/" className="text-xl font-bold text-red-600 tracking-widest">
           PSFX
