@@ -20,7 +20,11 @@ export default function Home() {
       <div className="absolute inset-0 bg bg-repeat opacity-5 mix-blend-overlay"></div>
 
       <div className="z-20 flex flex-col md:flex-row items-center justify-center gap-8 p-8 max-w-4xl mx-auto backdrop-blur-sm bg-black/20 rounded-lg border border-red-900/20">
-        <div className="relative w-48 h-48 md:w-64 md:h-64 group">
+        <motion.div className="relative w-48 h-48 md:w-64 md:h-64 group"
+          initial={{ opacity: 0, x: 25 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 2, type: "spring", stiffness: 200, damping: 20 }}
+        >
           <div className="absolute inset-0 bg-red-900/20 rounded-md animate-pulse"></div>
           <Image
             src="/images/pasifixc.webp"
@@ -31,14 +35,14 @@ export default function Home() {
             className="rounded-md relative z-10 filter contrast-125 group-hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-red-900/30 to-transparent rounded-md z-20"></div>
-        </div>
+        </motion.div>
 
         <div className="text-center md:text-left overflow-hidden">
           <motion.h1
             className="text-4xl md:text-6xl font-bold mb-4 tracking-wider text-red-50"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, type: "spring", stiffness: 200, damping: 20 }}
+            transition={{ delay:0.2, duration: 2, type: "spring", stiffness: 200, damping: 20 }}
           >
             <span className="text-red-600 animate-pulse inline-block">;</span>
             {letters.map((letter, index) => (
@@ -46,7 +50,7 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 2, type: "spring", stiffness: 200, damping: 20 }}
+                transition={{ delay:0.2, duration: 2, type: "spring", stiffness: 200, damping: 20 }}
               >
                 {letter}
               </motion.span>
@@ -56,7 +60,7 @@ export default function Home() {
             className="text-red-100/70 max-w-lg font-medium tracking-wide overflow-hidden"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay:0.2, duration: 2, type: "spring", stiffness: 400, damping: 40 }}
+            transition={{ delay:0.4, duration: 2, type: "spring", stiffness: 400, damping: 40 }}
           >
             人生、死ぬこと、それらが全部理解する前に私たちを通り過ぎるだろうまで、落ち着いてそのことを忘す
           </motion.p>
