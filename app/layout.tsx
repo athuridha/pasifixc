@@ -9,8 +9,8 @@ import { BloodEffect } from "@/components/blood-effect"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "PASIFIXC",
-  description: "PASIFIXC",
+  title: "pasifixc coorporation",
+  description: "psfx",
   generator: 'v0.dev',
   icons: {
     icon: '/images/pasifixc.webp'
