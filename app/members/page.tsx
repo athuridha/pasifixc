@@ -1,5 +1,7 @@
+"use client";
 import { UserProfile } from "@/components/user-profile"
 import { RedBeam } from "@/components/red-beam"
+import { motion } from "motion/react"
 
 // Mock data for user profiles
 const members = [
@@ -52,13 +54,17 @@ const members = [
     avatar: "/images/pasifixc.webp?height=100&width=100",
     bio: "",
   },
-
-
 ]
 
 export default function MembersPage() {
   return (
-    <div className="relative min-h-[calc(100vh-64px)] py-12">
+    <motion.div
+      className="relative min-h-[calc(100vh-64px)] py-12"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <RedBeam />
 
       <div className="container mx-auto px-4 z-10 relative">
@@ -72,7 +78,7 @@ export default function MembersPage() {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

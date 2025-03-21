@@ -1,6 +1,8 @@
+"use client";
 import { RedBeam } from "@/components/red-beam"
 import { SocialMediaCard } from "@/components/social-media-card"
 import { Facebook, Instagram, Twitter, Youtube, Twitch, LinkIcon as Discord } from "lucide-react"
+import { motion } from "motion/react"
 
 // PASIFIXC social media profiles
 const socialMediaProfiles = [
@@ -16,7 +18,13 @@ const socialMediaProfiles = [
 
 export default function SocialsPage() {
   return (
-    <div className="relative min-h-[calc(100vh-64px)] py-12">
+    <motion.div
+      className="relative min-h-[calc(100vh-64px)] py-12"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <RedBeam />
 
       {/* Horror elements */}
@@ -38,7 +46,7 @@ export default function SocialsPage() {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,9 +1,17 @@
+"use client";
 import Image from "next/image"
 import { RedBeam } from "@/components/red-beam"
+import { motion } from "motion/react"
 
 export default function Home() {
   return (
-    <div className="relative min-h-[calc(100vh-64px)] flex items-center justify-center overflow-hidden">
+    <motion.div
+      className="relative min-h-[calc(100vh-64px)] flex items-center justify-center overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <RedBeam />
 
       {/* Horror elements */}
@@ -32,7 +40,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
