@@ -3,6 +3,8 @@ import Image from "next/image"
 import { RedBeam } from "@/components/red-beam"
 import { motion } from "motion/react"
 
+const letters = "PASIFIXC".split("");
+
 export default function Home() {
   return (
     <motion.div
@@ -31,13 +33,33 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-red-900/30 to-transparent rounded-md z-20"></div>
         </div>
 
-        <div className="text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-wider text-red-50">
-            <span className="text-red-600 animate-pulse inline-block">;</span>PASIFIXC
-          </h1>
-          <p className="text-red-100/70 max-w-lg font-medium tracking-wide">
+        <div className="text-center md:text-left overflow-hidden">
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold mb-4 tracking-wider text-red-50"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 2, type: "spring", stiffness: 200, damping: 20 }}
+          >
+            <span className="text-red-600 animate-pulse inline-block">;</span>
+            {letters.map((letter, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 2, type: "spring", stiffness: 200, damping: 20 }}
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </motion.h1>
+          <motion.p
+            className="text-red-100/70 max-w-lg font-medium tracking-wide overflow-hidden"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay:0.2, duration: 2, type: "spring", stiffness: 400, damping: 40 }}
+          >
             人生、死ぬこと、それらが全部理解する前に私たちを通り過ぎるだろうまで、落ち着いてそのことを忘す
-          </p>
+          </motion.p>
         </div>
       </div>
     </motion.div>
