@@ -58,27 +58,30 @@ const members = [
 
 export default function MembersPage() {
   return (
-    <motion.div
-      className="relative min-h-[calc(100vh-64px)] py-12"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div
+      className="relative min-h-[calc(100vh-64px)] py-12">
       <RedBeam />
 
       <div className="container mx-auto px-4 z-10 relative">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+        <motion.h1 className="text-3xl md:text-4xl font-bold mb-8 text-center"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay:0, duration: 2, type: "spring", stiffness: 200, damping: 20 }}
+        >
           <span className="text-red-500">;</span>Members
-        </h1>
+        </motion.h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay:0.1, duration: 2, type: "spring", stiffness: 200, damping: 20 }}
+        >
           {members.map((member) => (
             <UserProfile key={member.id} user={member} />
           ))}
-        </div>
+        </motion.div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 
