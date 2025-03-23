@@ -1,7 +1,6 @@
-"use client";
 import { UserProfile } from "@/components/user-profile"
 import { RedBeam } from "@/components/red-beam"
-import { motion } from "motion/react"
+import MotionDiv from "@/components/text-motion"
 
 // Mock data for user profiles
 const members = [
@@ -63,15 +62,15 @@ export default function MembersPage() {
       <RedBeam />
 
       <div className="container mx-auto px-4 z-10 relative">
-        <motion.h1 className="text-3xl md:text-4xl font-bold mb-8 text-center"
+        <MotionDiv className="text-3xl md:text-4xl font-bold mb-8 text-center"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay:0, duration: 2, type: "spring", stiffness: 200, damping: 20 }}
         >
           <span className="text-red-500">;</span>Members
-        </motion.h1>
+        </MotionDiv>
 
-        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        <MotionDiv className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay:0.1, duration: 2, type: "spring", stiffness: 200, damping: 20 }}
@@ -79,7 +78,7 @@ export default function MembersPage() {
           {members.map((member) => (
             <UserProfile key={member.id} user={member} />
           ))}
-        </motion.div>
+        </MotionDiv>
       </div>
     </div>
   )
