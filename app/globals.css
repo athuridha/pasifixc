@@ -84,7 +84,7 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.8) 100%);
+  background: radial-gradient(circle at center, transparent 75%, rgba(0, 0, 0, 0.8) 100%);
   pointer-events: none;
   z-index: 30;
 }
