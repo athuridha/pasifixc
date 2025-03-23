@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { RedBeam } from "@/components/red-beam";
-import MotionDiv from "@/components/text-motion";
+import Motions from "@/components/text-motion";
 
 const letters = "PASIFIXC".split("");
 
 export default function Home() {
   return (
-    <MotionDiv
+    <Motions
       className="relative min-h-[calc(100vh-64px)] flex items-center justify-center overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -19,7 +19,7 @@ export default function Home() {
       <div className="absolute inset-0 bg bg-repeat opacity-5 mix-blend-overlay"></div>
 
       <div className="z-20 flex flex-col md:flex-row items-center justify-center gap-8 p-8 max-w-4xl mx-auto backdrop-blur-sm bg-black/20 rounded-lg border border-red-900/20">
-        <MotionDiv
+        <Motions
           className="relative w-48 h-48 md:w-64 md:h-64 group"
           initial={{ opacity: 0, x: 25 }}
           animate={{ opacity: 1, x: 0 }}
@@ -35,10 +35,10 @@ export default function Home() {
             className="rounded-md relative z-10 filter contrast-125 group-hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-red-900/30 to-transparent rounded-md z-20"></div>
-        </MotionDiv>
+        </Motions>
 
         <div className="text-center md:text-left overflow-hidden">
-          <MotionDiv
+          <Motions
             className="text-4xl md:text-6xl font-bold mb-4 tracking-wider text-red-50 flex"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,27 +46,27 @@ export default function Home() {
           >
             <span className="text-red-600 animate-pulse inline-block">;</span>
             {letters.map((letter, index) => (
-              <MotionDiv
+              <Motions
                 key={index}
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 2, type: "spring", stiffness: 200, damping: 20 }}
               >
                 {letter}
-              </MotionDiv>
+              </Motions>
             ))}
-          </MotionDiv>
-          <MotionDiv
+          </Motions>
+          <Motions
             className="text-red-100/70 max-w-lg font-medium tracking-wide overflow-hidden"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 2, type: "spring", stiffness: 400, damping: 40 }}
           >
             人生、死ぬこと、それらが全部理解する前に私たちを通り過ぎるだろうまで、落ち着いてそのことを忘す
-          </MotionDiv>
+          </Motions>
         </div>
       </div>
-    </MotionDiv>
+    </Motions>
   );
 }
 

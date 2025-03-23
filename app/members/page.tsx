@@ -1,6 +1,6 @@
 import { UserProfile } from "@/components/user-profile"
 import { RedBeam } from "@/components/red-beam"
-import MotionDiv from "@/components/text-motion"
+import Motions from "@/components/text-motion"
 
 // Mock data for user profiles
 const members = [
@@ -62,23 +62,30 @@ export default function MembersPage() {
       <RedBeam />
 
       <div className="container mx-auto px-4 z-10 relative">
-        <MotionDiv className="text-3xl md:text-4xl font-bold mb-8 text-center"
+        <Motions className="text-3xl md:text-4xl font-bold mb-8 text-center"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay:0, duration: 2, type: "spring", stiffness: 200, damping: 20 }}
         >
           <span className="text-red-500">;</span>Members
-        </MotionDiv>
+        </Motions>
 
-        <MotionDiv className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        <Motions className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay:0.1, duration: 2, type: "spring", stiffness: 200, damping: 20 }}
         >
-          {members.map((member) => (
+          {members.map((member, index) => (
+            <Motions
+            key={member.id}
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 2, type: "spring", stiffness: 200, damping: 20 }}
+          >
             <UserProfile key={member.id} user={member} />
+            </Motions>
           ))}
-        </MotionDiv>
+        </Motions>
       </div>
     </div>
   )
