@@ -1,30 +1,21 @@
-import Image from "next/image";
-import { RedBeam } from "@/components/red-beam";
-import Motions from "@/components/text-motion";
-
-const letters = "PASIFIXC".split("");
+import Image from "next/image"
+import { RedBeam } from "@/components/red-beam"
+import Motions from "@/components/text-motion"
 
 export default function Home() {
   return (
-    <Motions
-      className="relative min-h-[calc(100vh-64px)] flex items-center justify-center overflow-hidden"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div className="relative min-h-[calc(100vh-64px)] flex items-center justify-center overflow-hidden">
       <RedBeam />
 
       {/* Horror elements */}
       <div className="absolute inset-0 bg bg-repeat opacity-5 mix-blend-overlay"></div>
 
       <div className="z-20 flex flex-col md:flex-row items-center justify-center gap-8 p-8 max-w-4xl mx-auto backdrop-blur-sm bg-black/20 rounded-lg border border-red-900/20">
-        <Motions
-          className="relative w-48 h-48 md:w-64 md:h-64 group"
-          initial={{ opacity: 0, x: 25 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 2, type: "spring", stiffness: 200, damping: 20 }}
-        >
+        <Motions 
+        initial={{ opacity: 0, scale: 0.5, rotate: -8 }}
+        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+        transition={{ delay: 0, duration: 2, type: "spring", stiffness: 400, damping: 20 }}
+        className="relative w-48 h-48 md:w-64 md:h-64 group">
           <div className="absolute inset-0 bg-red-900/20 rounded-md animate-pulse"></div>
           <Image
             src="/images/pasifixc.webp"
@@ -37,36 +28,23 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-red-900/30 to-transparent rounded-md z-20"></div>
         </Motions>
 
-        <div className="text-center md:text-left overflow-hidden">
+        <div className="text-center md:text-left">
           <Motions
-            className="text-4xl md:text-6xl font-bold mb-4 tracking-wider text-red-50 flex"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 2, type: "spring", stiffness: 200, damping: 20 }}
-          >
-            <span className="text-red-600 animate-pulse inline-block">;</span>
-            {letters.map((letter, index) => (
-              <Motions
-                key={index}
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 2, type: "spring", stiffness: 200, damping: 20 }}
-              >
-                {letter}
-              </Motions>
-            ))}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 4, type: "spring", stiffness: 450, damping: 15 }}
+          className="text-4xl md:text-6xl font-bold mb-4 tracking-wider text-red-50">
+            <span className="text-red-600 animate-pulse inline-block">;</span>PASIFIXC
           </Motions>
           <Motions
-            className="text-red-100/70 max-w-lg font-medium tracking-wide overflow-hidden"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 2, type: "spring", stiffness: 400, damping: 40 }}
-          >
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 4, type: "spring", stiffness: 450, damping: 15 }}
+          className="text-red-100/70 max-w-lg font-medium tracking-wide">
             人生、死ぬこと、それらが全部理解する前に私たちを通り過ぎるだろうまで、落ち着いてそのことを忘す
           </Motions>
         </div>
       </div>
-    </Motions>
-  );
+    </div>
+  )
 }
-
