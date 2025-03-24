@@ -12,9 +12,9 @@ export default function Home() {
 
       <div className="z-20 flex flex-col md:flex-row items-center justify-center gap-8 p-8 max-w-4xl mx-auto backdrop-blur-sm bg-black/20 rounded-lg border border-red-900/20">
         <Motions 
-        initial={{ opacity: 0, scale: 0.5, rotate: -8 }}
-        animate={{ opacity: 1, scale: 1, rotate: 0 }}
-        transition={{ delay: 0, duration: 2, type: "spring", stiffness: 400, damping: 20 }}
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1}}
+        transition={{ delay: 0, duration: 2}}
         className="relative w-48 h-48 md:w-64 md:h-64 group">
           <div className="absolute inset-0 bg-red-900/20 rounded-md animate-pulse"></div>
           <Image
@@ -30,16 +30,16 @@ export default function Home() {
 
         <div className="text-center md:text-left">
           <Motions
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1, duration: 4, type: "spring", stiffness: 450, damping: 15 }}
+          transition={{ delay: 0.1, duration: 4, type: "spring", stiffness: 500, damping: 20 }}
           className="text-4xl md:text-6xl font-bold mb-4 tracking-wider text-red-50">
             <span className="text-red-600 animate-pulse inline-block">;</span>PASIFIXC
           </Motions>
           <Motions
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 4, type: "spring", stiffness: 450, damping: 15 }}
+          transition={{ delay: 0.2, duration: 4, type: "spring", stiffness: 500, damping: 20 }}
           className="text-red-100/70 max-w-lg font-medium tracking-wide">
             人生、死ぬこと、それらが全部理解する前に私たちを通り過ぎるだろうまで、落ち着いてそのことを忘す
           </Motions>
