@@ -1,11 +1,17 @@
-'use client'
 import type React from "react"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import { ThemeProvider } from "@/components/theme-provider"
 import { BloodEffect } from "@/components/blood-effect"
-import { useEffect, useState } from "react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Pasifixc Corporation",
+  icons: {
+    icon: "/images/pasifixc.webp"
+  }
+}
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -14,15 +20,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
-
-  if (!isClient) {
-    return null
-  }
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -35,5 +32,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
